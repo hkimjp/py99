@@ -7,7 +7,7 @@
   </h2>
   <p>{{problem.problem|safe}}</p>
   <!-- class='nocopy' でコピー防止 -->
-  <pre class='cancopy'>{{answer.answer}}</pre>
+  <pre class='nocopy'>{{answer.answer}}</pre>
 
   {% if login = "hkimura" %}
   <p>download as <a href="/download/{{answer.id}}">p{{answer.num}}.py</a></p>

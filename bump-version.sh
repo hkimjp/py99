@@ -35,3 +35,5 @@ VER=$1
 TODAY=`date +%F`
 ${SED} -i -e "/SNAPSHOT/c\
 ## ${VER} / ${TODAY}" CHANGELOG.md
+
+${SED} -i -e "s/version = .*/version = \"${VER}\"/" pyproject.toml

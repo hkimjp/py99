@@ -12,14 +12,20 @@
 - home.clj から validation を別ファイルに出す。
 - 一般性の高い関数を utils.clj に移動する。
 
-## v1.27.1321 / 2025-02-21
+## 1.28.0 / 2025-05-23
+
+- rename all `v1.*` tags to `*` using ~/bin/git-rename-tags.bb
+- bump-versio.sh considers `project.toml`.
+- Justfile
+
+## 1.27.1321 / 2025-02-21
 
 - enable endpoints for grading
   - /api/py99/:login
   - /api/comm/:login
   - /api/goal-in/:login
 
-## v1.26.1317 / 2025-02-18
+## 1.26.1317 / 2025-02-18
 
 - fix days -- home.clj,
 
@@ -28,39 +34,39 @@
 (def days-to   "2025-02-28") ; exclusive
 ```
 
-## v1.26.1313 / 2025-02-18
+## 1.26.1313 / 2025-02-18
 
 - fixed SOP count -- remained 300. changed to 1000.
 
-## v1.26.1307 / 2025-02-18
+## 1.26.1307 / 2025-02-18
 
 - SOP points from 2025-02-04 to 2025-02-27.
 - comment out unused py99.config and fetch-problem in service.clj.
 
-## v1.26.1286 / 2025-02-18
+## 1.26.1286 / 2025-02-18
 
 - Ruff 0.9.6.
 - allow copying answers.
 
-## v1.25.1278 / 2025-01-10
+## 1.25.1278 / 2025-01-10
 
 - remove `profile` and `activities` from navbar.
   since buttons to same functions already exists on front page.
 - Ruff 0.9.1.
 
-## v1.25.1262 / 2025-01-10
+## 1.25.1262 / 2025-01-10
 
 - Ruff 0.9.0.
 
       $ pipx upgrade ruff
       upgraded package ruff from 0.8.0 to 0.9.0 (location: /home/ubuntu/.local/share/pipx/venvs/ruff)
 
-## v1.25.1261 / 2025-01-09
+## 1.25.1261 / 2025-01-09
 
 - defaults for '/ac'. user's login and today's date.
 - barrier free. can see which is answer or  comment without colors.
 
-## v1.24.1255 / 2025-01-08
+## 1.24.1255 / 2025-01-08
 
 - 'Activities' in menu, links to '/ac'
 - added /api/ac/:login/:date
@@ -70,7 +76,7 @@
 - updated docker compose hkim0331/py99:0.7.0, postgres:16
 - add :login key
 
-## v1.23.1224 / 2024-12-27
+## 1.23.1224 / 2024-12-27
 
 - /api/spo/:login
 
@@ -83,7 +89,7 @@
       }
 
 
-## v1.23.1224 / 2024-12-27
+## 1.23.1224 / 2024-12-27
 
 本日のエラー。ruff, doctest, pytest の各エラーを集計して表示する。
 
@@ -94,7 +100,7 @@
 - `/py99` is no use. Py99 has `/submissions?login=who`.
 - moved `home/today` to `utils/today`.
 
-## v1.21.1206 / 2024-12-14
+## 1.21.1206 / 2024-12-14
 
 - users can download their answers.
 - admin can download answers.
@@ -102,14 +108,14 @@
 - added: home/download/:id
 - fixed bug: pass `login` to status-page.
 
-## v1.23.1224 / 2024-12-27
+## 1.23.1224 / 2024-12-27
 
 - widen filter box
 - buttons text white
 - remove download button
 - /s, /p, /o pages.
 
-## v1.20.1193 / 2024-12-14
+## 1.20.1193 / 2024-12-14
 
 - added: home/days-from-to "from-day" "to-day"
 - changed: home/s-point-days - takes arguments `from-day` and `to-day`.
@@ -119,33 +125,33 @@
 - removed: home/profile: (remove #(< 200 %)), (filter #(< 200 (:num %)) solved)
 
 
-## v1.19.1184 / 2024-12-09
+## 1.19.1184 / 2024-12-09
 
 - changed GET /api/recents/:n => POST /api/recents n:=4
 - POST /api/py99 login=login
 
-## v1.18.1180 / 2024-12-07
+## 1.18.1180 / 2024-12-07
 - links to {s,p,o}-pint
 - p-point
 - o-point
 
-## v1.17.1161 / 2024-12-05
+## 1.17.1161 / 2024-12-05
 
 - endpoint /s-point
 - added: /api/recents/:n
 
-## v1.16.1142 / 2024-11-28
+## 1.16.1142 / 2024-11-28
 
 - keep user pytest error files.
 - **reduced clj-kondo warnings** by db/declare db-functions.
 
-## v1.15.1141 / 2024-11-28
+## 1.15.1141 / 2024-11-28
 
 - added: utils/dev?
   (= true (utils/dev?)) 時は not-same-md5-loginチェックをしない。
 - bug fixed: forgot to exand includes in doctest.
 
-## v1.15.1134 / 2024-11-28
+## 1.15.1134 / 2024-11-28
 
 - added: 回答に doctest があれば実施する。エラーになった回答を受け取らない。
 - updated: libraries: ring/ring-core, ring-develop も1.13.0にアップデート。
@@ -175,13 +181,13 @@
 |             | ring/ring-core                      | 1.12.2   | 1.13.0  |
 |             | ring/ring-devel                     | 1.12.2   | 1.13.0  |
 
-## v1.14.1114 / 2024-11-26
+## 1.14.1114 / 2024-11-26
 
 - timeout エラーを明示する。
 
   timeout occured. took 10s or more to evaluate.
 
-## v1.13.1110 / 2024-11-24
+## 1.13.1110 / 2024-11-24
 
 - same answers, different answers の間に
   one's other solutions (just one means this only)
@@ -193,11 +199,11 @@
   (redirect (str "/admin/problems#" (:num q))
 ```
 
-## v1.12.1101 / 2024-11-23
+## 1.12.1101 / 2024-11-23
 
 - radio buttons for showing on/off testcodes.
 
-## v1.12.1097 / 2024-11-23
+## 1.12.1097 / 2024-11-23
 - bug fixed, admin で num, show_testcode 等を変更しても変更できなかった。
   insert の時は int/string を気にせず行けても、update の時はケアしないとか？
 
@@ -213,21 +219,21 @@
       (redirect "/error.html"))))
 ```
 
-## v1.12.1090 / 2024-11-23
+## 1.12.1090 / 2024-11-23
 
 - Ruff 0.8.0.
 
-## v1.11.1086 / 2024-11-22
+## 1.11.1086 / 2024-11-22
 
 - comment textarea に回答オーサーあるいは、直上のコメンター。
 - '💡commenter' only for replies.
 
-## v1.10.1075 / 2024-11-17
+## 1.10.1075 / 2024-11-17
 
 - ruff エラーのアカウントを晒す。
   バリデーションに失敗した回答のファイル名にアカウントをアペンドする。
 
-## v1.9.1069 / 2024-11-13
+## 1.9.1069 / 2024-11-13
 
 - layout/shorten-login
   問題番号とログイン名の後ろの数字が紛らわしい。
@@ -240,7 +246,7 @@
 {{a.login|shorten-login}}{% if a.doctest %}🚀{% else %}~{% endif %}{{a.num}}
 ```
 
-## v1.9.1060 / 2024-11-12
+## 1.9.1060 / 2024-11-12
 
 - fixed typo login.clj/logout
 - try expand-includes
@@ -259,7 +265,7 @@ request timed out after 30001ms.
 
 - login.clj: ログにリモートアドレス
 
-## v1.7.1049 / 2024-11-04
+## 1.7.1049 / 2024-11-04
 
 - log のタイムスタンプ --- iso フォーマットになってない。
   logback.xml:
@@ -286,21 +292,21 @@ request timed out after 30001ms.
 (def ^:private number-of-comments 30)
 ```
 
-## v1.6.1037 / 2024-10-30
+## 1.6.1037 / 2024-10-30
 
 - show one's class on `/comment/:n` page via `class` buttn.
 - signature, login-name only. not "自作" nor "自力".
 
-## v1.6.1025 / 2024-10-25
+## 1.6.1025 / 2024-10-25
 
 - improved /home/docstring
 - added `add` button to /admin ---  create a new empty problem.
 
-## v1.6.1019 / 2024-10-25
+## 1.6.1019 / 2024-10-25
 
 - user💪num を詰めて表示。
 
-## v1.6.1014 / 2024-10-25
+## 1.6.1014 / 2024-10-25
 
 - 自力回答は関数コメントに「自力」を明示すること。
 - home/signature? --- answers に署名(by hkimura, 自力、自作)が含まれているか？
@@ -317,12 +323,12 @@ RETURNING id
         {% if a.signature %}💪{% else %}--{% endif %}{{a.num}}</a>
 ```
 
-## v1.5.1005 / 2024-10-18
+## 1.5.1005 / 2024-10-18
 
 - ruff was installed in `app.melt:/home/ubuntu/.local/bin/ruff`
   by pipx.
 
-## v1.4.999 / 2024-10-07
+## 1.4.999 / 2024-10-07
 
 -  回答からコメントはいで、トリミングしてから ruff-formatter に通す。
 
@@ -330,15 +336,15 @@ RETURNING id
 (ruff-formatter (str/trim (remove-comments answer)))
 ```
 
-## v1.4.996 / 2024-10-07
+## 1.4.996 / 2024-10-07
 
 - updated src/clj/py99/config.clj for 2024 classes.
 
-## v1.4.991 / 2024-10-07
+## 1.4.991 / 2024-10-07
 
 - バリデーションのエラーメッセージを日本語に。
 
-## v1.4.981 / 2024-10-06
+## 1.4.981 / 2024-10-06
 
 - list answers new ones first.
 - check validations.
@@ -349,16 +355,16 @@ RETURNING id
 /tmp/*
 ```
 
-## v1.3.967 / 2024-09-30
+## 1.3.967 / 2024-09-30
 
 - updated filter --- can filter multiple users.
 
-## v1.2.936 / 2024-09-30
+## 1.2.936 / 2024-09-30
 
 - config を環境変数に出した。 PY99_START と PY99_DAYS.
 - updated Makefile, docker entries.
 
-## v1.2.945 / 2024-09-28
+## 1.2.945 / 2024-09-28
 
 - solved: dump に失敗する。dump 先の問題か？
 - added src/clj/py99/routes/admin.clj
@@ -379,7 +385,7 @@ RETURNING id
 
 
 
-## v1.1.937 / 2024-09-22
+## 1.1.937 / 2024-09-22
 
 - added `script/remove-2023.sh` which removes date before 2024-09-01.
 - resumed color of stock buttoms. Good stocks and bad stocks may exist.
@@ -390,7 +396,7 @@ RETURNING id
 - moved prev-next block to the bottom of the page.
 - changed the class of `stock` button to `is-dager` from `is-primary`.
 
-## v1.1.927 / 2024-09-12
+## 1.1.927 / 2024-09-12
 
 - Ruff formatter, what happened? can not ruff files saved in `/tmp` on ubuntu.
   in macos, files saved in /var/tmp/... are OK.
@@ -405,7 +411,7 @@ error: Failed to format python6089995288880906622.py: No such file or directory 
 
 - "tmp/(System/nanoTime).py" にファイルを作って、それを ruff にかけるようにした。
 
-## v1.0 / 2024-08-21
+## 1.0 / 2024-08-21
 - updated libraries.
 
 | :file       | :name                          | :current | :latest |
