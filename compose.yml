@@ -12,9 +12,8 @@ services:
     ports:
       - "3099:3099"
     command:
-      - sleep
-      - infinity
-
+      - lein
+      - run
   db:
     image: postgres:16
     environment:

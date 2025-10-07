@@ -12,6 +12,40 @@
 - home.clj から validation を別ファイルに出す。
 - 一般性の高い関数を utils.clj に移動する。
 
+## 2.0.0-SNAPSHOT
+
+- can not docker pull
+
+    ❯ docker pull hkim0331/py99:0.7.1
+    Error response from daemon: manifest for hkim0331/py99:0.7.1 not found: manifest unknown: manifest unknown
+
+- some of them should not be upgraded, for example, hiccup2.
+
+| :file       | :name                             | :current | :latest |
+|-------------|-----------------------------------|----------|---------|
+| project.clj | ch.qos.logback/logback-classic    | 1.5.12   | 1.5.19  |
+|             | cheshire/cheshire                 | 5.13.0   | 6.1.0   |
+|             | cider/cider-nrepl                 | 0.50.2   | 0.57.0  |
+|             | com.jakemccrary/lein-test-refresh | 0.25.0   | 0.26.0  |
+|             | cprop/cprop                       | 0.1.20   | 0.1.21  |
+|             | hiccup/hiccup                     | 1.0.5    | 2.0.0   |
+|             | markdown-clj/markdown-clj         | 1.12.2   | 1.12.4  |
+|             | metosin/muuntaja                  | 0.6.10   | 0.6.11  |
+|             | metosin/reitit                    | 0.7.2    | 0.9.1   |
+|             | metosin/ring-http-response        | 0.9.4    | 0.9.5   |
+|             | mount/mount                       | 0.1.20   | 0.1.23  |
+|             | nrepl/nrepl                       | 1.3.0    | 1.4.0   |
+|             | org.clojure/clojure               | 1.12.0   | 1.12.3  |
+|             | org.clojure/tools.cli             | 1.1.230  | 1.2.245 |
+|             | org.postgresql/postgresql         | 42.7.4   | 42.7.8  |
+|             | org.webjars.npm/bulma             | 1.0.2    | 1.0.4   |
+|             | ring-webjars/ring-webjars         | 0.3.0    | 0.3.1   |
+|             | ring/ring-core                    | 1.13.0   | 1.15.3  |
+|             | ring/ring-defaults                | 0.5.0    | 0.7.0   |
+|             | ring/ring-devel                   | 1.13.0   | 1.15.3  |
+|             | ring/ring-mock                    | 0.4.0    | 0.6.2   |
+|             | selmer/selmer                     | 1.12.61  | 1.12.62 |
+
 ## 1.28.0 / 2025-05-23
 
 - rename all `v1.*` tags to `*` using ~/bin/git-rename-tags.bb
