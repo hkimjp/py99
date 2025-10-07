@@ -14,6 +14,9 @@
 
 ## 2.0.0-SNAPSHOT
 
+* 違う。開発終了するなら .m2 や .gitlibs への依存があったらまずいのでは？
+  uberjar にする方が開発終了に相応しくないか？
+* コンテナ化して開発終了する。
 - can not docker pull
 
     ❯ docker pull hkim0331/py99:0.7.1
@@ -45,6 +48,19 @@
 |             | ring/ring-devel                   | 1.13.0   | 1.15.3  |
 |             | ring/ring-mock                    | 0.4.0    | 0.6.2   |
 |             | selmer/selmer                     | 1.12.61  | 1.12.62 |
+
+- remains not upgraded
+
+| :file       | :name                             | :current | :latest |
+|-------------|-----------------------------------|----------|---------|
+| project.clj | cheshire/cheshire                 | 5.13.0   | 6.1.0   |
+|             | com.jakemccrary/lein-test-refresh | 0.25.0   | 0.26.0  |
+|             | hiccup/hiccup                     | 1.0.5    | 2.0.0   |
+|             | metosin/reitit                    | 0.7.2    | 0.9.1   |
+|             | ring/ring-core                    | 1.13.0   | 1.15.3  |
+|             | ring/ring-defaults                | 0.5.0    | 0.7.0   |
+|             | ring/ring-devel                   | 1.13.0   | 1.15.3  |
+|             | ring/ring-mock                    | 0.4.0    | 0.6.2   |
 
 ## 1.28.0 / 2025-05-23
 
